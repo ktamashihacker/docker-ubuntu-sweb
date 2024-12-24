@@ -34,9 +34,8 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN wget -O turbovnc.deb https://jaist.dl.sourceforge.net/project/turbovnc/3.0/turbovnc_3.0_${TARGETARCH}.deb \
-    && dpkg -i turbovnc.deb && rm -rf turbovnc.deb
-
+RUN wget -qO- https://github.com/kasmtech/KasmVNC/releases/download/v0.9.1-beta/KasmVNC_0.9.1-beta_Ubuntu_18.04.tar.gz | tar xz --strip 1 -C /
+    
 ####################
 # Add User
 ####################
